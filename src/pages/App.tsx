@@ -3,7 +3,7 @@ import React from 'react';
 export const App: React.FC = () => {
   return (
     <div className="App">
-      <header>InterMail</header>
+      <h1>Email Sender</h1>
     </div>
   );
 };
