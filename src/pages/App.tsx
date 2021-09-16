@@ -10,7 +10,7 @@ export const App: React.FC = () => {
       <p>Subject:</p>
       <input type="text" />
       <p>Message:</p>
-      <textarea value="Type your message" />
+      <input type="text" />
       <br />
       <button>Send</button>
     </form>
