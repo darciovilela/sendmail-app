@@ -2,7 +2,7 @@ import React from 'react';
 // import ReactDOM from 'react-dom';
 import Form from './components/Form';
 
-export const App: React.FC = () => {
+const App = () => {
   return (
     <div>
       <Form />

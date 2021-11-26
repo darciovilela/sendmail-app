@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import { useState } from 'react';
 
 // Component
 const Form = () => {
@@ -8,16 +9,30 @@ const Form = () => {
     message: '',
   });
 
-  const handleInputChange = (event: { target: { name: any; value: any } }) => {
+  const handleInputChange:
+    | React.ChangeEventHandler<HTMLInputElement>
+    | undefined = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     setCampos((values) => ({ ...values, [name]: value }));
   };
 
-  const handleFormSubmit = (event: { preventDefault: () => void }) => {
-    event.preventDefault();
-    alert(campos);
-  };
+  const handleFormSubmit: React.FormEventHandler<HTMLFormElement> | undefined =
+    async (event) => {
+      event.preventDefault();
+      try {
+        await axios.post('http://localhost:4000/send', campos);
+      } catch (e: any) {
+        alert(e.message);
+      }
+
+      setCampos({
+        to: '',
+        subject: '',
+        message: '',
+      });
+      console.log(campos);
+    };
 
   return (
     <div className="form">
