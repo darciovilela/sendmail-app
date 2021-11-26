@@ -44,6 +44,7 @@ const Form = () => {
           type="text"
           value={campos.to}
           onChange={handleInputChange}
+          required
         />
         <label>Subject:</label>
         <input
@@ -51,6 +52,7 @@ const Form = () => {
           type="text"
           value={campos.subject}
           onChange={handleInputChange}
+          required
         />
         <label>Message:</label>
         <input
@@ -58,6 +60,7 @@ const Form = () => {
           type="text"
           value={campos.message}
           onChange={handleInputChange}
+          required
         />
         <input className="submit" type="submit" />
       </form>
