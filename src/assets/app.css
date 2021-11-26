@@ -36,9 +36,6 @@ input {
   padding: 20px;
   margin-bottom: 20px;
   width: 100%;
-}
-
-input[type='text'] {
   font-size: large;
   color: #696565;
 }
