@@ -22,6 +22,7 @@ const Form = () => {
       event.preventDefault();
       try {
         await axios.post('http://localhost:4000/send', campos);
+        alert('The email was sent!');
       } catch (e: any) {
         alert(e.message);
       }
@@ -31,7 +32,6 @@ const Form = () => {
         subject: '',
         message: '',
       });
-      console.log(campos);
     };
 
   return (
@@ -41,7 +41,7 @@ const Form = () => {
         <label>To:</label>
         <input
           name="to"
-          type="text"
+          type="email"
           value={campos.to}
           onChange={handleInputChange}
           required
